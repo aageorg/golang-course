@@ -12,23 +12,14 @@ import (
 	"strconv"
 )
 
-func IntPow(x int, y int) int {
-	pow := 1
-	a := x
-	for pow < y {
-		a = a * x
-		pow++
-	}
-	return a
-}
-
 func CountDigits(x int) int {
 	a := 0
-	for x/10 > 0 {
-		x = x / 10
+	d := x
+	for d > 0 {
+		d = d / 10
 		a++
 	}
-	return a + 1
+	return a
 }
 
 func main() {
@@ -39,19 +30,15 @@ func main() {
 
 	//для любого числа:
 
-	pow := CountDigits(number) - 1
-	sf := strconv.Itoa(pow + 1)
+	pow := CountDigits(number)
+	strFormat := strconv.Itoa(pow)
 	result := 0
 
-	for CountDigits(number) > 1 {
-
-		lastdigit := number % 10
-		result += lastdigit * IntPow(10, pow)
-		pow--
+	for pow > 0 {
+		result = result*10 + number%10
 		number = number / 10
+		pow--
 	}
 
-	result += number
-
-	fmt.Printf("The result is %0"+sf+"d\n", result)
+	fmt.Printf("The result is %0"+strFormat+"d\n", result)
 }
