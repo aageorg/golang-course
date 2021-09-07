@@ -30,14 +30,14 @@ func main() {
 
 	//для любого числа:
 
-	pow := CountDigits(number)
-	strFormat := strconv.Itoa(pow)
+	count := CountDigits(number)
+	strFormat := strconv.Itoa(count)
 	result := 0
 
-	for pow > 0 {
+	for count > 0 {
 		result = result*10 + number%10
 		number = number / 10
-		pow--
+		count--
 	}
 
 	fmt.Printf("The result is %0"+strFormat+"d\n", result)
