@@ -1,11 +1,8 @@
 /*
-Задача №1
-Вход:
-    расстояние(50 - 10000 км),
-    расход в литрах (5-25 литров) на 100 км и
-    стоимость бензина(константа) = 48 руб
-
-Выход: стоимость поездки в рублях
+Задача № 3. Вывести на экран в порядке возрастания три введенных числа
+Пример:
+Вход: 1, 9, 2
+Выход: 1, 2, 9
 */
 
 package main
@@ -31,23 +28,19 @@ func main() {
 	fmt.Println("Enter the the third integer number:")
 	fmt.Scanf("%d", &c)
 
-	for a > b || b > c || c <= a {
+	for !((a <= b) && (b <= c)) {
 		//       fmt.Println("iteration...")
-		if a >= b {
+		if a > b {
 			t = a
 			a = b
 			b = t
 		}
-		if b >= c {
+		if b > c {
 			t = b
 			b = c
 			c = t
 		}
-		if c <= a {
-			t = c
-			c = a
-			c = t
-		}
+
 	}
 	fmt.Println("The sorted sequence: %d, %d, %d\n", a, b, c)
 }
