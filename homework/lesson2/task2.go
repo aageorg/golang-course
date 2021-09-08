@@ -66,7 +66,7 @@ func IsRectangular(a float64, b float64, c float64) bool {
 	} else {
 		return false
 	}
-	if math.Pow(maxSide, 2) == (math.Pow(cat1, 2) + math.Pow(cat2, 2)) {
+	if math.Round(math.Pow(maxSide, 2)) == math.Round((math.Pow(cat1, 2) + math.Pow(cat2, 2))) {
 		return true
 	} else {
 		return false
