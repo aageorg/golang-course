@@ -106,7 +106,7 @@ func main() {
 		fmt.Println("По заданным точкам можно построить треугольник")
 		a, b, c := TriangleSides(coordinates)
 		fmt.Printf("Площадь треугольника будет %f\n", STriangle(a, b, c))
-		fmt.Printf("Стороны треугольника будет %f %f %f\n", a, b, c)
+		fmt.Printf("Стороны треугольника будут %f %f %f\n", a, b, c)
 		isRectangular := IsRectangular(a, b, c)
 		if isRectangular == true {
 			rect = "да"
