@@ -17,9 +17,9 @@ import (
 
 func TriangleAble(xy [3][2]float64) bool {
 	// (у3-у1) / (у2-у1)
-	if xy[1][1]-xy[0][1] == 0 {
+	if xy[1][1]-xy[0][1] == 0 && xy[2][0]-xy[0][0] != 0 {
 		return false
-	} else if xy[1][0]-xy[0][0] == 0 {
+	} else if xy[1][0]-xy[0][0] == 0 && xy[2][1]-xy[0][1] !=0 {
 		return false
 	}
 
